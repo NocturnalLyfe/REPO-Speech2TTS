@@ -8,6 +8,7 @@ Transform your voice chat into hilarious text-to-speech! Uses completely offline
 - Your actual voice is muted when STT is enabled (only TTS is broadcast)
 - Toggle on/off with a single keypress
 - Text appears in game chat for all players to see
+- Flexible model support - use small, medium, or large models
 - No performance impact
 
 ## Installation
@@ -51,40 +52,57 @@ Transform your voice chat into hilarious text-to-speech! Uses completely offline
 
 No configuration needed! Just press F7 to toggle.
 
-### Using a Better Model (Optional)
+### Using Different Models
 
-For better accuracy, you can replace the model:
+The mod automatically detects which model you have installed (in priority order):
 
-1. Download `vosk-model-en-us-0.22` from https://alphacephei.com/vosk/models
+1. **vosk-model-small-en-us-0.15** (~40MB) - Default, fastest, good accuracy
+2. **vosk-model-en-us-0.22** (~1.8GB) - Better accuracy, slower
+3. **vosk-model-en-us-0.42-gigaspeech** (~2.3GB) - Best accuracy, slowest
+
+#### To Use a Different Model:
+
+1. Download your preferred model from https://alphacephei.com/vosk/models
 2. Extract to `BepInEx/plugins/NocturnalLyfe-Speech2TTS/model/`
-3. Update the folder name in the mod code
+3. Keep the original folder name (don't rename it)
+4. The mod will automatically detect and use it!
+
+**Tip:** You can have multiple models installed - the mod will use the first one it finds in the priority order above.
+
+**Warning:** Changing to larger model will cause longer launch of REPO and requires a stronger device to run.
 
 ## Troubleshooting
 
 **Mod not working:**
 - Check `BepInEx/LogOutput.log` for errors
-- Ensure all DLLs are in the plugin folder
-- Verify the model folder exists and is named correctly
+- Ensure all DLLs are in the plugin folder (libvosk.dll, libgcc_s_seh-1.dll, libstdc++-6.dll, libwinpthread-1.dll)
+- Verify at least one model folder exists in the `model/` directory
 
 **Low accuracy:**
 - Speak clearly and at a moderate pace
 - Check microphone quality
-- Consider using the larger model (vosk-model-en-us-0.22)
+- Consider upgrading to vosk-model-en-us-0.22 or vosk-model-en-us-0.42-gigaspeech for better accuracy
 
 **No audio transmission:**
 - This is normal when STT is enabled! Your voice is muted and replaced with TTS
 - Press F7 to disable STT for normal voice chat
 
+**Wrong model being used:**
+- Check the log file to see which model was loaded
+- Remove unwanted models from the `model/` folder
+- Models are loaded in priority order (small -> normal -> gigaspeech)
+
 ## Technical Details
 
-- **Model**: vosk-model-small-en-us-0.15 (~40MB)
+- **Default Model**: vosk-model-small-en-us-0.15 (~40MB)
 - **Speech Recognition**: Offline Vosk engine
 - **Sampling Rate**: 48kHz
 - **Language**: English (US)
+- **Supported Models**: Any Vosk English model compatible with the API
 
 ## Credits
 
-- Mod by Nocturnal
+- Mod by NocturnalLyfe
 - Vosk Speech Recognition: https://alphacephei.com/vosk/
 - BepInEx: https://github.com/BepInEx/BepInEx
 

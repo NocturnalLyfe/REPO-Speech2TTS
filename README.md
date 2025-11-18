@@ -25,7 +25,8 @@ Transform your voice chat into hilarious text-to-speech! Uses completely offline
 ## Usage
 
 ### Controls
-- **F7** - Toggle Speech-to-Text mode ON/OFF
+- **F7** - Toggle Speech-to-Text Menu Panel
+- **F8** - Toggle Speech-to-Text mode ON/OFF Directly
 
 ### Modes
 
@@ -54,9 +55,7 @@ No configuration needed! Just press F7 to toggle.
 
 ### Using Different Models
 
-The mod automatically detects which model you have installed (in priority order):
-
-1. **vosk-model-small-en-us-0.15** (~40MB) - Default, fastest, good accuracy
+1. **vosk-model-small-en-us-0.15 (Default)** (~40MB) - Default, fastest, good accuracy
 2. **vosk-model-en-us-0.22** (~1.8GB) - Better accuracy, slower
 3. **vosk-model-en-us-0.42-gigaspeech** (~2.3GB) - Best accuracy, slowest
 
@@ -69,7 +68,7 @@ The mod automatically detects which model you have installed (in priority order)
 
 **Tip:** You can have multiple models installed - the mod will use the first one it finds in the priority order above.
 
-**Warning:** Changing to larger model will cause longer launch of REPO and requires a stronger device to run.
+**Warning:** Changing to larger models will cause lag and is only recommended for users with stronger devices.
 
 ## Troubleshooting
 

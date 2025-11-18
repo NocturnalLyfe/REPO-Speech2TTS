@@ -1,10 +1,12 @@
 # Changelog
 
-## [1.2.0] - 11-17-2025
+## [1.3.0] - 11-18-2025
 
 ### Added
-- Ability to change Vosk Model for better accuracy, more info in README
-- New Icon for Thunderstore
+- Dependancy with MenuLib to create menu to manage and configure mod
 
-### Removed
-- Redundant Vosk API files not required for runtime
+### Features
+- Sensitivity Slider for Model
+- Refresh Button to check for new models ingame
+- Folder Button to find model folder easier for adding new models
+- Vosk Model Link to find viable models

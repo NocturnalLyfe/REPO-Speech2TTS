@@ -1,6 +1,6 @@
 {
   "name": "Speech2TTS",
-  "version_number": "1.4.0",
+  "version_number": "1.4.1",
   "website_url": "https://thunderstore.io/c/repo/p/NocturnalLyfe/",
   "description": "Converts your voice chat into text-to-speech using offline speech recognition. Press F7 and F8 to toggle between TTS mode and normal voice chat.",
   "dependencies": [
